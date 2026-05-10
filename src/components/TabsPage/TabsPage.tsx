@@ -1,15 +1,15 @@
 import { Link, useParams } from 'react-router-dom';
-import { Tab } from '../../types/Tab';
 import classNames from 'classnames';
+import { Tab } from '../../types/Tab';
 
 type Props = {
   tabs: Tab[];
 };
 
-const TabsPage = ({ tabs }: Props) => {
+export const TabsPage = ({ tabs }: Props) => {
   const { tabId } = useParams();
 
-  const selectedTab = tabs.find(tab => tab.id === tabId) ?? null;
+  const currentTab = tabs.find(tab => tab.id === tabId);
 
   return (
     <>
@@ -30,10 +30,8 @@ const TabsPage = ({ tabs }: Props) => {
       </div>
 
       <div className="block" data-cy="TabContent">
-        {selectedTab ? selectedTab.content : 'Please select a tab'}
+        {currentTab ? currentTab.content : 'Please select a tab'}
       </div>
     </>
   );
 };
-
-export default TabsPage;

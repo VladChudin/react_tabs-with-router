@@ -3,7 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import './App.scss';
 import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './components/HomePage/HomePage';
-import TabsPage from './components/TabsPage/TabsPage';
+import { TabsPage } from './components/TabsPage/TabsPage';
 
 const tabs = [
   { id: 'tab-1', title: 'Tab 1', content: 'Some text 1' },
